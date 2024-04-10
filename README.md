@@ -56,8 +56,4 @@ MIT License
 
 ## Questions
 
-Have additional questions? Contact me through my GitHub or email.
-
-[Link to Github](https://github.com/gurleyryan)
-
-<a href="mailto:gurleyryan@gmail.com">gurleyryan@gmail.com</a>
+Have additional questions? Contact us through our GitHubs.
