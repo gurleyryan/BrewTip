@@ -1,5 +1,5 @@
 const typeDefs = `
-type Profile {
+type Owner {
     _id: ID
     name: String
     email: String
@@ -7,23 +7,23 @@ type Profile {
     password: String
   }
 
-  # Set up an Auth type to handle returning data from a profile creating or user login
+  # Set up an Auth type to handle returning data from an owner creating or user login
   type Auth {
     token: ID!
-    profile: Profile
+    owner: Owner
   }
 
   type Query {
-    profiles: [Profile]!
-    profile(profileId: ID!): Profile
+    owners: [Owner]!
+    owner(ownerId: ID!): Owner
   }
 
   type Mutation {
-    # Set up mutations to handle creating a profile or logging into a profile and return Auth type
-    addProfile(name: String!, email: String!, password: String!): Auth
+    # Set up mutations to handle creating an owner or logging into an owner and return Auth type
+    addOwner(name: String!, email: String!, password: String!): Auth
     login(email: String!, password: String!): Auth
 
-    removeProfile(profileId: ID!): Profile
+    removeOwner(ownerId: ID!): Owner
   }
 `;
 

@@ -1,43 +1,43 @@
-const { Profile } = require('../models');
+const { Owner } = require('../models');
 const { signToken, AuthenticationError } = require('../utils/auth');
 
 const resolvers = {
     Query: {
-        profiles: async () => {
-          return Profile.find();
+        owners: async () => {
+          return Owner.find();
         },
     
-        profile: async (parent, { profileId }) => {
-          return Profile.findOne({ _id: profileId });
+        owner: async (parent, { ownerId }) => {
+          return Owner.findOne({ _id: ownerId });
         },
       },
     
       Mutation: {
-        addProfile: async (parent, { name, email, password }) => {
-          const profile = await Profile.create({ name, email, password });
-          const token = signToken(profile);
+        addOwner: async (parent, { name, email, password }) => {
+          const owner = await Owner.create({ name, email, password });
+          const token = signToken(owner);
     
-          return { token, profile };
+          return { token, owner };
         },
         login: async (parent, { email, password }) => {
-          const profile = await Profile.findOne({ email });
+          const owner = await Owner.findOne({ email });
     
-          if (!profile) {
+          if (!owner) {
             throw AuthenticationError
           }
     
-          const correctPw = await profile.isCorrectPassword(password);
+          const correctPw = await owner.isCorrectPassword(password);
     
           if (!correctPw) {
             throw AuthenticationError
           }
     
-          const token = signToken(profile);
-          return { token, profile };
+          const token = signToken(owner);
+          return { token, owner };
         },
     
-        removeProfile: async (parent, { profileId }) => {
-          return Profile.findOneAndDelete({ _id: profileId });
+        removeOwner: async (parent, { ownerId }) => {
+          return Owner.findOneAndDelete({ _id: ownerId });
         },
       },
 };
