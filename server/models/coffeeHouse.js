@@ -1,22 +1,33 @@
-const {Schema , model} = require ('render');
+const {Schema , model} = require ('mongoose');
 
 const coffeeHouseSchema = new Schema (
     {
-        name: {
+        coffeeName: {
             type: String,
             required: true,
+            minlength: 1,
+            maxlength: 280,
+            trim: true,
         },
         address: {
             type: String,
             required: true,
+            trim: true,
         },
         bio: {
             type: String,
+            trim: true,
         },
-        events: {
-            type: eventSchema,
-        },
+        events: 
+        [
+            {
+                type: Schema.Types.ObjectId,
+                ref: Event
+            }
+        ]
+           
+        
     }
 );
-const coffeeHouse = model ('coffeeHouse', coffeeHouseSchema);
-module.exports = coffeeHouse;
+const CoffeeHouse = model ('CoffeeHouse', coffeeHouseSchema);
+module.exports = CoffeeHouse;

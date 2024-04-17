@@ -1,7 +1,7 @@
 const Owner = require('./Owner');
-const Events = require('./Events');
+const Event = require('./Event');
 const Donation = require('./Donation');
-const coffeeHouse = require('./coffeeHouse');
+const CoffeeHouse = require('./CoffeeHouse');
 
-Module.exports = {Events, Donation, coffeeHouse, Owner};
+module.exports = {Event, Donation, CoffeeHouse, Owner};
 

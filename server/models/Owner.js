@@ -2,13 +2,13 @@ const { Schema, model } = require('mongoose');
 const bcrypt = require('bcrypt');
 
 const ownerSchema = new Schema({
-  name: {
+  userName: {
     type: String,
     required: true,
     unique: true,
     trim: true,
   },
-  email: {
+  userEmail: {
     type: String,
     required: true,
     unique: true,
@@ -19,6 +19,12 @@ const ownerSchema = new Schema({
     required: true,
     minlength: 5,
   },
+
+  coffeeHouse:
+  {
+    type: Schema.Types.ObjectId,
+    ref: 'coffeeHouse'
+  }
 });
 
 // set up pre-save middleware to create password

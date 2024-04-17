@@ -1,25 +1,37 @@
-const { Schema , model} = require('render');
+const { Schema, model } = require('mongoose');
 
-const donationSchema = new Schema (
-    {
-     nameOfdonator: {
-        type: String,
-        required: true,
-     },
-     amount: {
-        type: Number,
-        required: true,
-     },
-     date: {
-        type: Date,
-        default: Date.now,
-     },
-     memo: {
-        type: String,
-     },
-        }
-    }
+const donationSchema = new Schema(
+   {
+      nameOfdonator: {
+         type: String,
+         trim: true,
+      },
+      donateAmount: {
+         type: Schema.Types.Number,
+         required: true,
+      },
+      donationDate: {
+         type: Date,
+         default: Date.now,
+      },
+      message: {
+         type: String,
+         maxlength: 280,
+         trim: true,
+      },
+
+      event:
+
+
+      {
+         type: Schema.Types.ObjectId,
+         ref: 'Event'
+      }
+
+
+   }
+
 );
 
 const Donation = model('Donation', donationSchema);
-Module.export = Donation;
+module.exports = Donation;
