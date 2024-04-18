@@ -91,7 +91,7 @@ const resolvers = {
       const correctPw = await user.isCorrectPassword(password);
 
       if (!correctPw) {
-        throw AuthenticationError;
+        throw "AuthenticationError";
       }
 
       const token = signToken(user);
