@@ -1,0 +1,50 @@
+[
+  {
+    "eventName": "Foundations of Data Science",
+    "eventDetail": "CHEM"
+    
+  },
+  {
+    "eventName": "Introduction to Computational Thinking",
+    "eventDetail": "LS"
+    
+  },
+  {
+    "eventName": "C for Programmers",
+    "eventDetail": "SCI"
+  },
+  {
+    "eventName": "C++ for Programmers",
+    "eventDetail": "SCI"
+   
+  },
+  {
+    "eventName": "Discrete Mathematics",
+    "eventDetail": "SCI"
+    
+  },
+  {
+    "eventName": "Computer Architecture and Engineering",
+    "eventDetail": "SCI"
+  
+  },
+  {
+    "eventName": "User Interface Design",
+    "eventDetail": "HH"
+  
+  },
+  {
+    "eventName": "Computer Security",
+    "eventDetail": "JH"
+    
+  },
+  {
+    "eventName": "Internet Architecture and Protocols",
+    "eventDetail": "JH"
+  
+  },
+  {
+    "eventName": "Algorithms for Computational Biology",
+    "eventDetail": "LS"  
+  }
+]

@@ -1,0 +1,39 @@
+[
+  {
+    "coffeeName": "Alberto Harrison",
+    "address": "123 campbell ct",
+    "bio": "life is good"
+
+  },
+  {
+    "coffeeName": "Peyton Olson",
+    "address":"568 hamilton ave",
+    "bio": "but first coffee"
+  
+  },
+  {
+    "coffeeName": "Virgil Parker",
+    "address": "12a silvercreek pl",
+    "bio": "coffee without music is not a cafein"
+
+  },
+  {
+    "coffeeName": "Rebecca Watts",
+    "address":"122 colonial way ave",
+    "bio": "5:59 am is a good time with a cup of coffee"
+
+  },
+  {
+    "coffeeName": "Colleen Moore",
+    "address":"192 alum rock",
+    "bio": "alone on sofa still better than a day without coffee"
+
+  },
+  {
+    "coffeeName": "Colleen Moore",
+    "address":"982 johnson ave",
+    "bio": "let coff it"
+
+  }
+
+]

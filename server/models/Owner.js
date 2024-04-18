@@ -20,10 +20,10 @@ const ownerSchema = new Schema({
     minlength: 5,
   },
 
-  coffeeHouse:
+  coffeehouse:
   {
     type: Schema.Types.ObjectId,
-    ref: 'coffeeHouse'
+    ref: 'CoffeeHouse'
   }
 });
 

@@ -1,0 +1,32 @@
+[
+  {
+    "userName": "khoi_coffee",
+    "userEmail": "khoi123@gmail.com",
+    "password": "password01"
+  },
+  {
+    "userName": "jonathan_bar",
+    "userEmail": "jonathan123@gmail.com",
+    "password": "password02"
+  },
+  {
+    "userName": "ryan_club",
+    "userEmail": "ryan123@yahoo.com",
+    "password": "password03"
+  },
+  {
+    "userName": "brian_coffee",
+    "userEmail": "brian123@gmail.com",
+    "password": "password04"
+  },
+  {
+    "userName": "donald_knuth",
+    "userEmail": "dknuth@techfriends.dev",
+    "password": "password09"
+  },
+  {
+    "userName": "lernantino",
+    "userEmail": "lernantino@techfriends.dev",
+    "password": "password10"
+  }
+]

@@ -3,17 +3,8 @@ type Owner {
     _id: ID
     userName: String
     userEmail: String
-    coffeeHouse: CoffeeHouse
+    coffeehouse: CoffeeHouse
   }
-
-type Event
-{
-  _id: ID
-  eventName: String
-  Date: String
-  eventDetail: String
-  donationDetail: [Donation]
-}
 
 
 type CoffeeHouse
@@ -22,9 +13,18 @@ type CoffeeHouse
   coffeeName: String
   address: String
   bio: String
-  events: [Event]
+  events: [Event]!
 }
 
+type Event
+{
+  _id: ID
+  eventName: String
+  Date: String
+  eventDetail: String
+  coffeeEvent: CoffeeHouse
+  donations: [Donation]!
+}
 
 type Donation
 {
@@ -33,6 +33,7 @@ type Donation
   donateAmount: Float
   donationDate: String
   message: String
+  event: Event
 }
 
 
@@ -44,13 +45,16 @@ type Donation
   }
 
   type Query {
-    owners: [Owner]!
+    owners: [Owner]
     owner(ownerId: ID!): Owner
-    coffeehouses: [CoffeeHouse]!
+
+    coffeehouses: [CoffeeHouse]
     coffeehouse(coffeeId: ID!): CoffeeHouse
-    events: [Event]!
+
+    events: [Event]
     event(eventId: ID!): Event
-    donations: [Donation]!
+    
+    donations: [Donation]
     donation(donationId: ID!): Donation
   }
 

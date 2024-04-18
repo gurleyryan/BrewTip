@@ -22,7 +22,7 @@ const coffeeHouseSchema = new Schema (
         [
             {
                 type: Schema.Types.ObjectId,
-                ref: Event
+                ref: 'Event'
             }
         ]
            

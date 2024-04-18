@@ -1,4 +1,5 @@
 const { Schema, model } = require('mongoose');
+const dateFormat = require('../utils/dateFormat');
 
 const eventsSchema = new Schema(
     {
@@ -11,6 +12,8 @@ const eventsSchema = new Schema(
             type: Date,
             default: Date.now,
             required: true,
+            get: (timestamp) => dateFormat(timestamp),
+       
         },
 
         eventDetail:
@@ -19,6 +22,20 @@ const eventsSchema = new Schema(
             required: 'You need to leave a detail!',
             trim: true
         },
+        coffeeEvent:
+        {
+             
+                type: Schema.Types.ObjectId,
+                ref: 'CoffeeHouse'
+            
+        },
+        donations:
+        [
+            {
+                type: Schema.Types.ObjectId,
+                ref: 'Donation'
+            }
+        ]
 
      
 
