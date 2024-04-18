@@ -47,6 +47,7 @@ db.once('open', async () => {
     const tempCoffee = coffeehouses[Math.floor(Math.random() * coffeehouses.length)];
 
     newOwner.coffeehouse = tempCoffee._id;
+    
     await newOwner.save();
 
   }
@@ -58,8 +59,6 @@ db.once('open', async () => {
   
     tempCoffee.events.push(newEvent._id);
     await tempCoffee.save();
-
-    
 
     newEvent.coffeeEvent = tempCoffee._id;
     await newEvent.save();

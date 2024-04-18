@@ -3,7 +3,7 @@ type Owner {
     _id: ID
     userName: String
     userEmail: String
-    coffeehouse: CoffeeHouse
+    coffeehouse: [CoffeeHouse]!
   }
 
 
@@ -58,6 +58,20 @@ type Donation
     donation(donationId: ID!): Donation
   }
 
+  type Mutation {
+    addOwner(userName: String!, userEmail: String!, password: String!): Auth
+    login(userEmail: String!, password: String!): Auth
+    addCoffeeHouse(ownerId: ID!, coffeeName: String!, address: String!, bio: String!): CoffeeHouse
+    addEvent(coffeeId: ID!, eventName: String!, eventDetail: String!): Event
+    addDonation(eventId: ID!, nameOfdonator: String!, donateAmount: Float!, message: String!): Donation
+    removeCoffeeHouse(coffeeId: ID!): CoffeeHouse
+    removeEvent(coffeeId: ID!, eventId: ID!): CoffeeHouse
+
+    updateCoffeeHouse(coffeeId: ID!, bio: String!): CoffeeHouse
+    updateEvent(eventId: ID!, eventDetail: String!): Event
+  }
+
 `;
 
 module.exports = typeDefs;
+// addCoffeeHouse(coffeeName: String!, address: String!, bio: String!): CoffeeHouse

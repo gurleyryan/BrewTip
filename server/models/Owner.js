@@ -21,10 +21,12 @@ const ownerSchema = new Schema({
   },
 
   coffeehouse:
+  [
   {
     type: Schema.Types.ObjectId,
     ref: 'CoffeeHouse'
   }
+]
 });
 
 // set up pre-save middleware to create password
