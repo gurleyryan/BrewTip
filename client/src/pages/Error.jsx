@@ -1,6 +1,4 @@
 import { useRouteError } from 'react-router-dom';
-import {  } from '@apollo/client';
-import {  } from '../utils/queries';
 
 const Error = () => {
     const error = useRouteError();
