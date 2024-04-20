@@ -18,6 +18,9 @@ const coffeeHouseSchema = new Schema (
             type: String,
             trim: true,
         },
+        image: {
+            type: String
+          },
         events: 
         [
             {

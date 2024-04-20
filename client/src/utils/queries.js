@@ -1,15 +1,71 @@
 import { gql } from '@apollo/client';
 
-export const QUERY_USER = gql`
-  query user($username: String!) {
-    user(username: $username) {
-      _id
-      username
-      email
-      thoughts {
+
+
+
+export const QUERY_COFFEEHOUSES = gql`
+query getCoffeehouses {
+  coffeehouses {
+    _id
+    coffeeName
+    address
+    bio
+    image
+  }
+}
+
+`;
+
+// QUERY_SINGLE_THOUGHT retrieves a single thought along with its associated comments, based on the provided thoughtId variable.
+export const QUERY_SINGLE_COFFEEHOUSE = gql`
+  query getSingleCoffeeHouse($coffeeId: ID!) {
+    coffeehouse(coffeeId: $coffeeId) {
+    _id
+    coffeeName
+    address
+    bio
+    image
+    events {
         _id
-        thoughtText
-        createdAt
+        eventName
+        eventDetail
+        Date
+      }
+    }
+  }
+`;
+
+
+
+export const QUERY_ME = gql`
+  query me {
+    me {
+      _id
+      userName
+      userEmail
+      coffeehouse {
+        _id
+        coffeeName
+        address
+        image
+      }
+    }
+  }
+`;
+
+export const QUERY_DONATION = gql`
+  query donation {
+    donation {
+      _id
+      nameOfdonator
+      donateAmount
+      donationDate
+      message
+      event {
+        _id
+        eventName
+        eventDetail
+        Date
       }
     }
   }

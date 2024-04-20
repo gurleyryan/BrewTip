@@ -29,6 +29,21 @@ const resolvers = {
     },
 
 
+    me: async (parent, args, context) => {
+      if (context.user) {
+        return await Owner.findOne({ _id: context.user._id }).populate('coffeehouse').populate({
+          path: 'coffeehouse',
+          populate: ['events',
+            {
+            path: 'events',
+            populate: 'donations'
+            }
+          ]
+        })
+      }
+      throw AuthenticationError;
+    },
+
 
    coffeehouses: async () => {
       return await CoffeeHouse.find({}).populate('events').populate
@@ -75,10 +90,10 @@ const resolvers = {
 
   Mutation: {
     addOwner: async (parent, { userName, userEmail, password }) => {
-      const profile = await Owner.create({ userName, userEmail, password });
-      const token = signToken(profile);
+      const user = await Owner.create({ userName, userEmail, password });
+      const token = signToken(user);
 
-      return { token, profile };
+      return { token, user };
     },
 
     login: async (parent, { userEmail, password }) => {
@@ -99,35 +114,108 @@ const resolvers = {
       return { token, user };
     },
 
+    
+
+    // addCoffeeHouse: async (parent, {ownerId, coffeeName, address,bio }) => {
+      
+    //   return Owner.findOneAndUpdate(
+    //     { _id: ownerId },
+    //     {
+    //      $addToSet: {coffeehouse: await CoffeeHouse.create({ coffeeName, address, bio })},
+    //     },
+    //     {
+    //       new: true,
+    //       runValidators: true,
+    //     }
+    //   );
+      
+    // },
 
     addCoffeeHouse: async (parent, {ownerId, coffeeName, address,bio }) => {
-      
-      return Owner.findOneAndUpdate(
-        { _id: ownerId },
-        {
-         $addToSet: {coffeehouse: await CoffeeHouse.create({ coffeeName, address, bio })},
-        },
-        {
-          new: true,
-          runValidators: true,
-        }
+     
+      const coffeehouse = await CoffeeHouse.create({
+        coffeeName,
+        address,
+        bio
+      });
+
+      await Owner.findOneAndUpdate(
+        { _id: context.user._id },
+        { $addToSet: { coffeehouse: coffeehouse._id } }
       );
+
+      return coffeehouse;
+  
+  },
+
+
+
+
+    tkAddCoffeeHouse: async (parent, {ownerId, coffeeName, address,bio },context) => {
+      if (context.user) {
+        const coffeehouse = await CoffeeHouse.create({
+          coffeeName,
+          address,
+          bio
+        });
+
+        await Owner.findOneAndUpdate(
+          { _id: context.user._id },
+          { $addToSet: { coffeehouse: coffeehouse._id } }
+        );
+
+        return coffeehouse;
+      }
+      throw AuthenticationError;
+      ('You need to be logged in!');
     },
 
     addEvent: async (parent, {coffeeId, eventName, eventDetail }) => {
+        const events = await Event.create({ eventName, eventDetail })
       
-      return CoffeeHouse.findOneAndUpdate(
-        { _id: coffeeId },
-        {
-         $addToSet: {events: await Event.create({ eventName, eventDetail })},
-        },
-        {
-          new: true,
-          runValidators: true,
-        }
-      );
+       await CoffeeHouse.findOneAndUpdate(
+        {_id: coffeeId},
+        { $addToSet: { events: events._id } }
+
+       );
+       return events
     },
 
+
+    tkAddCoffeeHouse: async (parent, {ownerId, coffeeName, address,bio },context) => {
+      if (context.user) {
+        const coffeehouse = await CoffeeHouse.create({
+          coffeeName,
+          address,
+          bio
+        });
+
+        await Owner.findOneAndUpdate(
+          { _id: context.user._id },
+          { $addToSet: { coffeehouse: coffeehouse._id } }
+        );
+
+        return coffeehouse;
+      }
+      throw AuthenticationError;
+      ('You need to be logged in!');
+    },
+
+
+    tkAddEvent: async (parent, {coffeeId, eventName, eventDetail },context) => {
+      if (context.user) {
+        const events = await Event.create({ eventName, eventDetail })
+      
+       await CoffeeHouse.findOneAndUpdate(
+        {_id: coffeeId},
+        { $addToSet: { events: events._id } }
+
+       );
+       return events
+      }
+      throw AuthenticationError;
+      ('You need to be logged in!');
+    },
 
     addDonation: async (parent, {eventId, nameOfdonator, donateAmount, message }) => {
 
@@ -147,6 +235,44 @@ const resolvers = {
       return CoffeeHouse.findOneAndDelete({ _id: coffeeId });
     },
 
+
+
+
+    tkRemoveCoffeeHouse: async (parent, { coffeeId }, context) => {
+      if (context.user) {
+        const coffeehouse = await CoffeeHouse.findOneAndDelete({
+          _id: coffeeId,
+        });
+
+        await Owner.findOneAndUpdate(
+          { _id: context.user._id },
+          { $pull: { coffeehouse: coffeehouse._id } }
+        );
+
+        return coffeehouse;
+      }
+      throw AuthenticationError;
+    },
+
+    
+    tkUpdateCoffeeHouse: async (parent, { coffeeId, bio },context) => {
+
+      if(context,user)
+      {
+        return await CoffeeHouse.findOneAndUpdate({ _id: coffeeId }, { bio }, {new: true});
+      }
+      
+      throw AuthenticationError;
+    },
+
+
+    updateCoffeeHouse: async (parent, { coffeeId, bio }) => {
+      return await CoffeeHouse.findOneAndUpdate({ _id: coffeeId }, { bio }, {new: true});
+    },
+
+
+ 
+
     removeEvent: async (parent, { coffeeId, eventId }) => {
       return CoffeeHouse.findOneAndUpdate(
         { _id: coffeeId },
@@ -155,14 +281,31 @@ const resolvers = {
       );
     },
 
-    updateCoffeeHouse: async (parent, { coffeeId, bio }) => {
-      return await CoffeeHouse.findOneAndUpdate({ _id: coffeeId }, { bio }, {new: true});
-    
+    tkRemoveEvent: async (parent, { coffeeId, eventId },context) => {
+        if(context.user)
+        {
+      return CoffeeHouse.findOneAndUpdate(
+        { _id: coffeeId },
+        { events: await Event.findOneAndDelete({ _id: eventId })} ,
+        { new: true }
+      );
+    }
+      throw AuthenticationError;
     },
+
+
 
     updateEvent: async (parent, { eventId, eventDetail }) => {
       return await Event.findOneAndUpdate({ _id: eventId }, { eventDetail }, {new: true});
     
+    },
+
+    
+    tkUpdateEvent: async (parent, { eventId, eventDetail },context) => {
+      if(context.user){
+      return await Event.findOneAndUpdate({ _id: eventId }, { eventDetail }, {new: true});
+      }
+      throw AuthenticationError;
     }
 
   }

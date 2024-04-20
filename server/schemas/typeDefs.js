@@ -13,6 +13,7 @@ type CoffeeHouse
   coffeeName: String
   address: String
   bio: String
+  image: String
   events: [Event]!
 }
 
@@ -56,19 +57,37 @@ type Donation
     
     donations: [Donation]
     donation(donationId: ID!): Donation
+
+    me: Owner
   }
 
   type Mutation {
     addOwner(userName: String!, userEmail: String!, password: String!): Auth
     login(userEmail: String!, password: String!): Auth
-    addCoffeeHouse(ownerId: ID!, coffeeName: String!, address: String!, bio: String!): CoffeeHouse
-    addEvent(coffeeId: ID!, eventName: String!, eventDetail: String!): Event
-    addDonation(eventId: ID!, nameOfdonator: String!, donateAmount: Float!, message: String!): Donation
-    removeCoffeeHouse(coffeeId: ID!): CoffeeHouse
-    removeEvent(coffeeId: ID!, eventId: ID!): CoffeeHouse
 
+    addCoffeeHouse(ownerId: ID!, coffeeName: String!, address: String!, bio: String!): CoffeeHouse
+    tkAddCoffeeHouse(coffeeName: String!, address: String!, bio: String!): CoffeeHouse
+    removeCoffeeHouse(coffeeId: ID!): CoffeeHouse
+    tkRemoveCoffeeHouse(coffeeId: ID!): CoffeeHouse
     updateCoffeeHouse(coffeeId: ID!, bio: String!): CoffeeHouse
+    tkUpdateCoffeeHouse(coffeeId: ID!, bio: String!): CoffeeHouse
+
+
+    addEvent(coffeeId: ID!, eventName: String!, eventDetail: String!): Event
+    removeEvent(coffeeId: ID!, eventId: ID!): CoffeeHouse
     updateEvent(eventId: ID!, eventDetail: String!): Event
+
+    tkAddEvent(coffeeId: ID!, eventName: String!, eventDetail: String!): Event
+    tkRemoveEvent(coffeeId: ID!, eventId: ID!): CoffeeHouse
+    tkUpdateEvent(eventId: ID!, eventDetail: String!): Event
+
+
+
+
+    addDonation(eventId: ID!, nameOfdonator: String!, donateAmount: Float!, message: String!): Donation
+
+
+    
   }
 
 `;

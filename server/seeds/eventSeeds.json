@@ -1,50 +1,50 @@
 [
   {
-    "eventName": "Foundations of Data Science",
-    "eventDetail": "CHEM"
+    "eventName": "Beans for Greens Initiative",
+    "eventDetail": "Environmental conservation initiatives focused on preserving forests and promoting sustainable farming practices. Planting trees for every cup, because our oxygen is our brewhaha!"
     
   },
   {
-    "eventName": "Introduction to Computational Thinking",
-    "eventDetail": "LS"
+    "eventName": "Mugs for Mental Health Movement",
+    "eventDetail": "Mental health organizations providing counseling and support services to individuals in need."
     
   },
   {
-    "eventName": "C for Programmers",
-    "eventDetail": "SCI"
+    "eventName": "Art Beans for Budding Picassos",
+    "eventDetail": "Arts education programs aimed at providing opportunities for creative expression to children and teenagers.Helping artists bloom and brush away their blues!"
   },
   {
-    "eventName": "C++ for Programmers",
-    "eventDetail": "SCI"
+    "eventName": "Sips for Scripts Scholarship Fund",
+    "eventDetail": "Educational programs aimed at promoting literacy and providing resources to underserved communities."
    
   },
   {
-    "eventName": "Discrete Mathematics",
-    "eventDetail": "SCI"
+    "eventName": "Grounds for Giving Shelter Fund",
+    "eventDetail": "Homelessness support programs providing shelter, meals, and resources to individuals experiencing homelessness.Turning beans into blankets, because everyone deserves a warm cup and a cozy corner!"
     
   },
   {
-    "eventName": "Computer Architecture and Engineering",
-    "eventDetail": "SCI"
+    "eventName": "Brews for Bees Conservation Coalition",
+    "eventDetail": "Pollinating change, one cup at a time, because even bees need a buzz!"
   
   },
   {
-    "eventName": "User Interface Design",
-    "eventDetail": "HH"
+    "eventName": "Bytes for Bites Food Bank",
+    "eventDetail": "Coding a hunger-free future, because no one should byte off more than they can chew!"
   
   },
   {
-    "eventName": "Computer Security",
-    "eventDetail": "JH"
+    "eventName": "Hugs for Hounds Rescue Network",
+    "eventDetail": "Rescuing pups one latte at a time, because every dog deserves a latte love!"
     
   },
   {
-    "eventName": "Internet Architecture and Protocols",
-    "eventDetail": "JH"
+    "eventName": "Gems for Girls STEM Scholarship",
+    "eventDetail": "Sparkling futures, one gem at a time, because girls rock in STEM!"
   
   },
   {
-    "eventName": "Algorithms for Computational Biology",
-    "eventDetail": "LS"  
+    "eventName": "Brews for Books Literacy League",
+    "eventDetail": "Brewing literacy, one cup at a time, because knowledge is the best blend!"  
   }
 ]

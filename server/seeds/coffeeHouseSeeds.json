@@ -1,39 +1,46 @@
+
 [
   {
-    "coffeeName": "Alberto Harrison",
-    "address": "123 campbell ct",
-    "bio": "life is good"
+    "coffeeName": "Byte Brew Café",
+    "address": "2139 Java Street, Serenity Square, Riverside, CA",
+    "bio": "Byte Brew Cafe started as a humble dream of two friends, Lily and Max, who shared a passion for coffee and community. Nestled in the heart of Riverside, their café serves as a cozy refuge where locals gather to savor handcrafted brews and engage in meaningful conversations. Lily and Max prioritize sustainability, sourcing their beans ethically and using eco-friendly practices. They believe in giving back to their community and regularly host events to support local artists and musicians",
+    "image": "coffee1.jpg"
 
   },
   {
-    "coffeeName": "Peyton Olson",
-    "address":"568 hamilton ave",
-    "bio": "but first coffee"
+    "coffeeName": "Python Percolator Cafe Palace",
+    "address":"8156 Blossom Avenue, Willow Park, Riverside, CA",
+    "bio": "Python Perculator Cafe Palace botanical-inspired haven located in the vibrant neighborhood of Willow Park. Founded by Sarah, a passionate horticulturist, and Jack, a seasoned barista, the café seamlessly blends their love for coffee and plants. Customers are greeted by a lush indoor garden, creating a serene atmosphere perfect for relaxation and creativity. Sarah and Jack are dedicated to promoting mental health awareness and often organize fundraisers and workshops to support local counseling services.",
+    "image": "coffee6.jpg"
   
   },
   {
-    "coffeeName": "Virgil Parker",
-    "address": "12a silvercreek pl",
-    "bio": "coffee without music is not a cafein"
+    "coffeeName": "Data Beans Coffee",
+    "address": "5789 Maple Lane, Oakwood Square, Riverside, CA",
+    "bio": "Data Beans Coffee quaint coffee nook nestled in the bustling neighborhood of Oakwood Square. Founded by Fredrick, a pastry chef with a penchant for perfection, and David, a coffee connoisseur with a keen eye for quality, the café exudes warmth and hospitality. Emily's delectable pastries perfectly complement David's expertly brewed coffee, creating a harmonious blend of flavors. The café doubles as a community hub, hosting book clubs, knitting circles, and live music nights. Emily and David are passionate about supporting education initiatives and regularly donate to local schools and literacy programs.",
+    "image": "coffee3.jpg"
+    
+  },
+  {
+    "coffeeName": "Pixel Perk Café",
+    "address":"2964 Harmony Avenue, Unity Square, Riverside, CA",
+    "bio": "Pixel Perk Cafe is more than just a coffee shop; it's a sanctuary for empathy and understanding. Founded by Mia, a social worker, and Alexandra, a former barista turned mental health advocate, the café strives to create a safe space where people from all walks of life can connect over a cup of coffee. Mia and Alex are passionate about destigmatizing mental illness and actively support organizations that provide resources and support to individuals struggling with their mental health.",
+    "image": "coffee4.jpg"
 
   },
   {
-    "coffeeName": "Rebecca Watts",
-    "address":"122 colonial way ave",
-    "bio": "5:59 am is a good time with a cup of coffee"
+    "coffeeName": "Brewdha Bar CoffeeHaus",
+    "address":"3425 Artisan Avenue, Creativity Corner, Riverside, CA",
+    "bio": "Brewdha Bar CoffeeHaus not your average coffee house; it's a fusion of caffeine and creativity. Founded by Martin, a local artist, and Mark, a coffee aficionado with a flair for design, and James, an art dealer, together - this trouple created a coffee shop as an art gallery, showcasing works from emerging artists in the community. Customers can sip on expertly brewed coffee while admiring the vibrant artworks adorning the walls. Martin, Mark, and James are committed to supporting the arts and regularly host fundraising events to sponsor art programs for underprivileged youth.",
+    "image": "coffee5.webp"
+
 
   },
   {
-    "coffeeName": "Colleen Moore",
-    "address":"192 alum rock",
-    "bio": "alone on sofa still better than a day without coffee"
-
-  },
-  {
-    "coffeeName": "Colleen Moore",
-    "address":"982 johnson ave",
-    "bio": "let coff it"
-
+    "coffeeName": "Caffeine Cabin",
+    "address":"6567 Harmony Street, Harmony Square, Riverside, CA",
+    "bio": "Caffeeing Cabin is a beacon of hope and kindness in the heart of Harmonyville. Founded by Sam, a social entrepreneur, and Maya, a seasoned barista with a heart of gold, the café embodies the spirit of giving back to the community. Sam and Maya employ individuals from marginalized backgrounds, providing them with opportunities for skill development and personal growth. The café also partners with local shelters and charities to provide meals and support to those in need.",
+    "image": "coffee2.jpg"
   }
 
 ]

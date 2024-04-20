@@ -76,7 +76,6 @@ db.once('open', async () => {
      tempEvent.donations.push(newDonation._id);
      await tempEvent.save();
 
-  
 
 
   }
