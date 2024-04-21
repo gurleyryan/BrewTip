@@ -1,19 +1,19 @@
-import decode from 'jwt-decode';
+import { jwtDecode } from 'jwt-decode';
 
 class AuthService {
   getProfile() {
-    return decode(this.getToken());
+    return jwtDecode(this.getToken());
   }
 
   loggedIn() {
     // Checks if there is a saved token and it's still valid
     const token = this.getToken();
-    return !!token && !this.isTokenExpired(token);
+    return !!token && !this.isTokenExpired(token) ? true : false;
   }
 
   isTokenExpired(token) {
     try {
-      const decoded = decode(token);
+      const decoded = jwtDecode(token);
       if (decoded.exp < Date.now() / 1000) {
         return true;
       } else return false;
