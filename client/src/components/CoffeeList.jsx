@@ -23,7 +23,7 @@ const CoffeeList = ({ coffeehouses, title }) => {
 
 <div id="portfolio" className="main-portfolio">
 <h2>{title}</h2>
- <input type="text" placeholder="Search" onChange={handleFilter} />
+ <input type="text" placeholder=" Search Coffee House" onChange={handleFilter} />
  <div className="grid-portfolio">
         {coffeehouses &&
         filteredUsers.map((coffeehouse) => {
