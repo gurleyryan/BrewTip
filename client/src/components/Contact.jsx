@@ -88,7 +88,7 @@ function Contact() {
         <div>
         
           <p>Want to get into contact?</p>
-          <address>
+          <address className="address">
             San Jose, CA <br />
             Phone: <a href="tel:123.456.7891">123.456.7891</a>
             <br />

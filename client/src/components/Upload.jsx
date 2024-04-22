@@ -1,34 +1,41 @@
-import React, { useState } from 'react';
+
+import React, {useState} from 'react';
 import axios from 'axios';
 
-const Upload = () => {
-   const [selectedFile, setSelectedFile] = useState(null);
+function Upload() {
 
-   const handleFileUpload = (event) => {
-     setSelectedFile(event.target.files[0]);
-   };
+  const [file, setFile] = useState()
 
-   const handleUpload = () => {
-     const formData = new FormData();
-     formData.append('file', selectedFile);
-     axios.post('/api/upload', formData)
-       .then((response) => {
-         console.log(response.data);
-       })
-       .catch((error) => {
-         console.log(error);
-       });
-   };
+  function handleChange(event) {
+    setFile(event.target.files[0])
+  }
+  
+  function handleSubmit(event) {
+    event.preventDefault()
+    const url = 'http://localhost:3001/graphql';
+    const formData = new FormData();
+    formData.append('file', file);
+    formData.append('fileName', file.name);
+    const config = {
+      headers: {
+        'content-type': 'multipart/form-data',
+      },
+    };
+    axios.post(url, formData, config).then((response) => {
+      console.log(response.data);
+    });
 
-   return(
-     <div>
-          
-       <h3>Upload File</h3>
-       <input type="file" onChange={handleFileUpload} />
-       <button onClick={handleUpload}>Upload</button>
-    
-     </div>
-   );
-};
+  }
+
+  return (
+    <div className="App">
+        <form onSubmit={handleSubmit}>
+          <h1>React File Upload</h1>
+          <input type="file" onChange={handleChange}/>
+          <button type="submit">Upload</button>
+        </form>
+    </div>
+  );
+}
 
 export default Upload;

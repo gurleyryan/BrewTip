@@ -37,10 +37,33 @@
 
   },
   {
+    "coffeeName": "Moc Coffee",
+    "address":"1650 Tierra Buena Dr, San Jose, CA",
+    "bio": "Caffeeing Cabin is a beacon of hope and kindness in the heart of Harmonyville. Founded by Sam, a social entrepreneur, and Maya, a seasoned barista with a heart of gold, the café embodies the spirit of giving back to the community. Sam and Maya employ individuals from marginalized backgrounds, providing them with opportunities for skill development and personal growth. The café also partners with local shelters and charities to provide meals and support to those in need.",
+    "image": "coffee10.jpg"
+  },
+  {
+    "coffeeName": "Lupatheen",
+    "address":"125 Main Street, San Francisco, CA",
+    "bio": "Caffeeing Cabin is a beacon of hope and kindness in the heart of Harmonyville. Founded by Sam, a social entrepreneur, and Maya, a seasoned barista with a heart of gold, the café embodies the spirit of giving back to the community. Sam and Maya employ individuals from marginalized backgrounds, providing them with opportunities for skill development and personal growth. The café also partners with local shelters and charities to provide meals and support to those in need.",
+    "image": "coffee1.jpg"
+  },
+  {
     "coffeeName": "Caffeine Cabin",
     "address":"6567 Harmony Street, Harmony Square, Riverside, CA",
     "bio": "Caffeeing Cabin is a beacon of hope and kindness in the heart of Harmonyville. Founded by Sam, a social entrepreneur, and Maya, a seasoned barista with a heart of gold, the café embodies the spirit of giving back to the community. Sam and Maya employ individuals from marginalized backgrounds, providing them with opportunities for skill development and personal growth. The café also partners with local shelters and charities to provide meals and support to those in need.",
-    "image": "coffee2.jpg"
+    "image": "coffee9.jpg"
+  },
+  {
+    "coffeeName": "Alley",
+    "address":"3011 Cafein Street, Sunny Vale, CA",
+    "bio": "Caffeeing Cabin is a beacon of hope and kindness in the heart of Harmonyville. Founded by Sam, a social entrepreneur, and Maya, a seasoned barista with a heart of gold, the café embodies the spirit of giving back to the community. Sam and Maya employ individuals from marginalized backgrounds, providing them with opportunities for skill development and personal growth. The café also partners with local shelters and charities to provide meals and support to those in need.",
+    "image": "coffee10.jpg"
+  },  {
+    "coffeeName": "Koi-koi-koi",
+    "address":"6567 Stevens Creek, Mountain View, CA",
+    "bio": "Caffeeing Cabin is a beacon of hope and kindness in the heart of Harmonyville. Founded by Sam, a social entrepreneur, and Maya, a seasoned barista with a heart of gold, the café embodies the spirit of giving back to the community. Sam and Maya employ individuals from marginalized backgrounds, providing them with opportunities for skill development and personal growth. The café also partners with local shelters and charities to provide meals and support to those in need.",
+    "image": "coffee7.jpg"
   }
 
 ]

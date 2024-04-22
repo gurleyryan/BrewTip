@@ -28,10 +28,11 @@ function Homepage()  {
           ) : (
             <CoffeeList
               coffeehouses={coffeehouses}
-              title="Welcome to CoffeeHouses"
+              title=""
             />
             
           )}
+          
         </div>
       </div>
     </main>

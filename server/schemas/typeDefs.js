@@ -79,8 +79,8 @@ type Checkout {
     addOwner(userName: String!, userEmail: String!, password: String!): Auth
     login(userEmail: String!, password: String!): Auth
 
-    addCoffeeHouse(ownerId: ID!, coffeeName: String!, address: String!, bio: String!): CoffeeHouse
-    tkAddCoffeeHouse(coffeeName: String!, address: String!, bio: String!): CoffeeHouse
+    addCoffeeHouse(ownerId: ID!, coffeeName: String!, address: String!, bio: String!,image:String!): CoffeeHouse
+    tkAddCoffeeHouse(coffeeName: String!, address: String!, bio: String!,image: String!): CoffeeHouse
     removeCoffeeHouse(coffeeId: ID!): CoffeeHouse
     tkRemoveCoffeeHouse(coffeeId: ID!): CoffeeHouse
     updateCoffeeHouse(coffeeId: ID!, bio: String!): CoffeeHouse

@@ -5,8 +5,6 @@ import Donation from './Donation';
 import DonationPayment from './DonationPayment';
 import Image from 'react-bootstrap/Image';
 import Card from 'react-bootstrap/Card';
-import Col from 'react-bootstrap/Col';
-import Row from 'react-bootstrap/Row';
 
 
 // Import the `useParams()` hook from React Router

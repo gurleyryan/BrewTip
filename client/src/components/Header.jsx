@@ -46,15 +46,19 @@ function Header(props) {
 
 
       </section>
+
       <section class="text-center">
-
-        <h1><em>Welcome to BrewTip</em></h1>
-        <p>
-          A page built with React. Here,
-          you can find a story of local coffee shops and support thems with events.
-        </p>
-
+      <h5 class="neon" data-text="U">W<span class="flicker-slow">el</span>C
+      <span class="flicker-fast">o</span>mE
+      <span class="flicker-fast"> T</span>o B
+      <span class="flicker-fast">r</span>eW
+      <span class="flicker-fast">T</span>i
+      <span class="flicker-fast">p</span></h5>
+ 
+ 
+        
       </section>
+      
     </div>
   );
 }

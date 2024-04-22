@@ -12,6 +12,7 @@ import Signup from './components/Signup';
 import DonationPayment from './components/DonationPayment';
 import SingleEvent from './components/SingleEvent';
 import SingleCoffeeHouse from './components/SingleCoffeeHouse'
+import CreateCoffeeHouse from './components/CreateCoffeeHouse'
 import { DateTime } from "./components/Date";
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import Profile from './components/Profile';
@@ -56,6 +57,11 @@ const router = createBrowserRouter([
         {
           path: '/me/:ownerId',
           element: <Profile />
+        }, 
+
+        {
+          path: '/createCoffeehouse',
+          element: <CreateCoffeeHouse />
         }, 
         
         {

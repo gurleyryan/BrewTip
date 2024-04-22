@@ -165,12 +165,13 @@ const resolvers = {
       
     // },
 
-    addCoffeeHouse: async (parent, {ownerId, coffeeName, address,bio }) => {
+    addCoffeeHouse: async (parent, {ownerId, coffeeName, address,bio,image }) => {
      
       const coffeehouse = await CoffeeHouse.create({
         coffeeName,
         address,
-        bio
+        bio,
+        image
       });
 
       await Owner.findOneAndUpdate(
@@ -185,12 +186,13 @@ const resolvers = {
 
 
 
-    tkAddCoffeeHouse: async (parent, {ownerId, coffeeName, address,bio },context) => {
+    tkAddCoffeeHouse: async (parent, {ownerId, coffeeName, address,bio,image },context) => {
       if (context.user) {
         const coffeehouse = await CoffeeHouse.create({
           coffeeName,
           address,
-          bio
+          bio,
+          image
         });
 
         await Owner.findOneAndUpdate(
