@@ -26,7 +26,11 @@ BrewTip is a web application that allows users to support their favorite coffeeh
 
 
 ## Installation
-
+1. Clone the repository: git clone https://github.com/gurleyryan/BrewTip.git
+2. Navigate to the project directory: cd BrewTip
+3. Install dependencies: npm install
+4. Start the development server: npm start
+5. The application should now be running on http://localhost:3000.
 
 
 ## Usage
