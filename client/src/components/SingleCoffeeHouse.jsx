@@ -1,6 +1,7 @@
 
 import React, { useEffect, useState, useRef } from "react";
 import Accordion from 'react-bootstrap/Accordion';
+import { Link } from 'react-router-dom';
 
 // Import the `useParams()` hook from React Router
 import { useParams } from 'react-router-dom';
@@ -116,10 +117,12 @@ const SingleCoffeeHouse = () => {
       <div className="m-3 p-4" style={{ border: '1px dotted #1a1a1a' }}>
         <EventList coffeeId={coffeehouse._id} />
       </div>
+
+      
     </div>
 
 
-
+            
   );
 };
 

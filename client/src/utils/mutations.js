@@ -29,3 +29,13 @@ export const ADD_OWNER = gql`
     }
   }
 `;
+
+
+export const ADD_DONATION= gql`
+mutation Mutation($eventId: ID!, $nameOfdonator: String!, $donateAmount: Int!, $message: String!) {
+  addDonation(eventId: $eventId, nameOfdonator: $nameOfdonator, donateAmount: $donateAmount, message: $message) {
+    nameOfdonator
+    donateAmount
+
+  }
+}`;

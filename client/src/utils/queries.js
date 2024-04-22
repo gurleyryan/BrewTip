@@ -36,6 +36,26 @@ export const QUERY_SINGLE_COFFEEHOUSE = gql`
 `;
 
 
+export const QUERY_SINGLE_EVENT_DETAIL = gql`
+  query getSingleEventDetail($eventId: ID!) {
+    event(eventId: $eventId) {
+    _id
+    eventName
+    Date
+    eventDetail
+    donations {
+        _id
+        nameOfdonator
+        donateAmount
+        donationDate
+        message
+      }
+    }
+  }
+`;
+
+
+
 
 export const QUERY_ME = gql`
   query me {
@@ -67,6 +87,16 @@ export const QUERY_DONATION = gql`
         eventDetail
         Date
       }
+    }
+  }
+`;
+
+
+
+export const QUERY_CHECKOUT = gql`
+  query getCheckout($donations: [DonationInput]) {
+    checkout(donations: $donations) {
+      session
     }
   }
 `;

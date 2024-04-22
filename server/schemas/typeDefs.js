@@ -31,12 +31,23 @@ type Donation
 {
   _id: ID
   nameOfdonator: String
-  donateAmount: Float
+  donateAmount: Int
   donationDate: String
   message: String
   event: Event
 }
 
+input DonationInput
+{
+  _id: ID
+  nameOfdonator: String
+  donateAmount: Int
+  message: String
+}
+
+type Checkout {
+  session: ID
+}
 
 
   # Set up an Auth type to handle returning data from an owner creating or user login
@@ -46,6 +57,8 @@ type Donation
   }
 
   type Query {
+    checkout(donations:[DonationInput]): Checkout
+
     owners: [Owner]
     owner(ownerId: ID!): Owner
 
@@ -84,7 +97,7 @@ type Donation
 
 
 
-    addDonation(eventId: ID!, nameOfdonator: String!, donateAmount: Float!, message: String!): Donation
+    addDonation(eventId: ID!, nameOfdonator: String!, donateAmount: Int!, message: String!): Donation
 
 
     

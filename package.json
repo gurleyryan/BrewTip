@@ -16,6 +16,8 @@
     "concurrently": "^8.2.2"
   },
   "dependencies": {
+    "@stripe/react-stripe-js": "^2.7.0",
+    "@stripe/stripe-js": "^3.3.0",
     "axios": "^1.6.8",
     "react-native-dynamic-search-bar": "^2.0.2"
   }

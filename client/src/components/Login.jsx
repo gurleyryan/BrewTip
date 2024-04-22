@@ -2,6 +2,8 @@ import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useMutation } from '@apollo/client';
 import { LOGIN } from '../utils/mutations';
+import Form from 'react-bootstrap/Form';
+
 
 import Auth from '../utils/auth';
 
@@ -53,22 +55,20 @@ const Login = (props) => {
               </p>
             ) : (
               <form onSubmit={handleFormSubmit}>
-                <input
-                  className="form-input"
-                  placeholder="Your userEmail"
-                  name="userEmail"
-                  type="userEmail"
-                  value={formState.userEmail}
-                  onChange={handleChange}
-                />
-                <input
-                  className="form-input"
-                  placeholder="******"
-                  name="password"
-                  type="password"
-                  value={formState.password}
-                  onChange={handleChange}
-                />
+
+                <Form>
+                  <Form.Group className="mb-3" controlId="formGroupEmail">
+                    <Form.Label>Email address</Form.Label>
+                    <Form.Control type="email" placeholder="Enter your email" name="userEmail"
+                      value={formState.userEmail} onChange={handleChange} />
+                  </Form.Group>
+
+                  <Form.Group className="mb-3" controlId="formGroupPassword">
+                    <Form.Label>Password</Form.Label>
+                    <Form.Control type="password" placeholder="Enter password" name="password"
+                      value={formState.password} onChange={handleChange} />
+                  </Form.Group>
+                </Form>
                 <button
                   className="btn btn-block btn-primary"
                   style={{ cursor: 'pointer' }}
@@ -92,3 +92,23 @@ const Login = (props) => {
 };
 
 export default Login;
+
+
+/*
+    <input
+                  className="form-input"
+                  placeholder="Your userEmail"
+                  name="userEmail"
+                  type="userEmail"
+                  value={formState.userEmail}
+                  onChange={handleChange}
+                />
+                <input
+                  className="form-input"
+                  placeholder="******"
+                  name="password"
+                  type="password"
+                  value={formState.password}
+                  onChange={handleChange}
+                />
+*/

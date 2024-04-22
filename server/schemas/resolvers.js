@@ -1,6 +1,6 @@
 const { Event, Donation, Owner, CoffeeHouse } = require('../models');
 const { signToken, AuthenticationError } = require('../utils/auth');
-
+const stripe = require('stripe')('sk_test_4eC39HqLyjWDarjtT1zdp7dc');
 const resolvers = {
   Query: {
   
@@ -85,6 +85,40 @@ const resolvers = {
     //   const owner = await Owner.findOne({userName}).populate('coffeeHouse')
     //   return owner.coffeeHouse;
     // },
+
+
+    checkout: async (parent, args, context) => {
+      const url = new URL(context.headers.referer).origin;
+      // We map through the list of products sent by the client to extract the _id of each item and create a new Order.
+      await Donation.create({nameOfdonator, donateAmount , message });
+      const line_donations = [];
+
+      for (const donation of args.donations) {
+        line_donations
+        .push({
+          price_data: {
+            currency: 'usd',
+
+            donation_data: {
+              nameOfdonator: donation.nameOfdonator,
+              message: donation.message,
+              donateAmount: donation.donateAmount,
+            },
+        
+          },
+        });
+      }
+
+      const session = await stripe.checkout.sessions.create({
+        payment_method_types: ['card'],
+        line_donations,
+        mode: 'payment',
+        success_url: `${url}/success?session_id={CHECKOUT_SESSION_ID}`,
+        cancel_url: `${url}/`,
+      });
+
+      return { session: session.id };
+    },
 
   },
 
@@ -218,18 +252,21 @@ const resolvers = {
     },
 
     addDonation: async (parent, {eventId, nameOfdonator, donateAmount, message }) => {
+      const donations = await Donation.create({ nameOfdonator, donateAmount,message });
 
-      return await Event.findOneAndUpdate(
+       await Event.findOneAndUpdate(
         { _id: eventId },
         {
-          $addToSet:{donations: await Donation.create({ nameOfdonator, donateAmount,message })},
+          $addToSet:{donations: donations._id },
         },
         {
           new: true,
           runValidators: true,
         }
       );
+      return donations
     },
+
 
     removeCoffeeHouse: async (parent, { coffeeId }) => {
       return CoffeeHouse.findOneAndDelete({ _id: coffeeId });

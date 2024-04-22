@@ -8,8 +8,10 @@ const donationSchema = new Schema(
          trim: true,
       },
       donateAmount: {
-         type: Schema.Types.Number,
+      
+         type: Number,
          required: true,
+         
       },
       donationDate: {
          type: Date,

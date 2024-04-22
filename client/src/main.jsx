@@ -9,6 +9,8 @@ import Homepage from './components/Homepage';
 import Upload from './components/Upload';
 import Error from './components/Error';
 import Signup from './components/Signup';
+import DonationPayment from './components/DonationPayment';
+import SingleEvent from './components/SingleEvent';
 import SingleCoffeeHouse from './components/SingleCoffeeHouse'
 import { DateTime } from "./components/Date";
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
@@ -36,13 +38,18 @@ const router = createBrowserRouter([
         },
 
         {
+          path: '/events/:eventId',
+          element: <SingleEvent />,
+        },
+
+        {
           path: '/Login',
           element: <Login />,
         },
 
         {
           path: '/Upload',
-          element: <Upload />,
+          element: <DonationPayment />,
         },
 
 
