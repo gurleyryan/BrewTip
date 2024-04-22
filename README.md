@@ -35,6 +35,21 @@ BrewTip is a web application that allows users to support their favorite coffeeh
 
 ## Usage
 
+## TECHNOLOGIES USED 
+Frontend:
+HTML
+CSS
+JavaScript
+React.js
+Redux
+
+Backend:
+Node.js
+Express.js
+MongoDB
+Mongoose
+JWT (JSON Web Tokens) for authentication
+
 
 
 ## Contributing
