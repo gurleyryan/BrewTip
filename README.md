@@ -22,7 +22,7 @@
  * [Questions](#questions)
 
 ## Description
-
+BrewTip is a web application that allows users to support their favorite coffeehouses through donations. The platform aims to provide an easy and convenient way for coffee lovers to contribute to their local coffee shops.
 
 
 ## Installation
