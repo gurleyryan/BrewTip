@@ -1,10 +1,10 @@
-import { jwtDecode } from 'jwt-decode';
+import decode from 'jwt-decode';
 
 class AuthService {
   getProfile() {
-    return jwtDecode(this.getToken());
+    console.log(decode(this.getToken()))
+    return decode(this.getToken());
   }
-
   loggedIn() {
     // Checks if there is a saved token and it's still valid
     const token = this.getToken();

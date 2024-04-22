@@ -12,21 +12,16 @@ function Header(props) {
   });
 
 
-  
+
 
   return (
 
     <div className="main-header">
+
       <section>
         <header>
           <div>
-          <a
-          href="#about-me"
-         
-        >
-    
-        </a>
-            <h1></h1>
+
 
           </div>
 
@@ -42,23 +37,21 @@ function Header(props) {
         </header>
 
         <div class="small-quote">
-        <h1 >
-         <span><em>{quote} </em></span>
-       
-        </h1>
-      
-        </div>
+          <h1 >
+            <span><em>{quote} </em></span>
 
+          </h1>
+
+        </div>
 
 
       </section>
       <section class="text-center">
-    
-        <h1><em>Welcome to my page</em></h1>
+
+        <h1><em>Welcome to BrewTip</em></h1>
         <p>
           A page built with React. Here,
-          you can find a small sample of the projects I have worked on over
-          the course of the program.
+          you can find a story of local coffee shops and support thems with events.
         </p>
 
       </section>

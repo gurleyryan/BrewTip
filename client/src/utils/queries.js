@@ -2,6 +2,20 @@ import { gql } from '@apollo/client';
 
 
 
+export const QUERY_USER = gql`
+query getOwner($ownerId: ID!) {
+  owner(ownerId: $ownerId) {
+    _id
+    userName
+    userEmail
+    coffeehouse {
+      coffeeName
+      address
+      bio
+    }
+  }
+}
+`;
 
 export const QUERY_COFFEEHOUSES = gql`
 query getCoffeehouses {
@@ -59,19 +73,19 @@ export const QUERY_SINGLE_EVENT_DETAIL = gql`
 
 
 export const QUERY_ME = gql`
-  query me {
-    me {
+query me {
+  me {
+    _id
+    userName
+    userEmail
+    coffeehouse {
       _id
-      userName
-      userEmail
-      coffeehouse {
-        _id
-        coffeeName
-        address
-        image
-      }
+      coffeeName
+      address
+      bio
     }
   }
+}
 `;
 
 export const QUERY_DONATION = gql`

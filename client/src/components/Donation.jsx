@@ -1,10 +1,10 @@
 import Accordion from 'react-bootstrap/Accordion';
 import { Link } from 'react-router-dom';
 const Donation = ({ donations = [] }) => {
-  console.log(donations);
-  if (!donations.length) {
-    return <h3>Ended Page</h3>;
-  }
+  // console.log(donations);
+  // if (!donations.length) {
+  //   return <h3>Ended Page</h3>;
+  // }
 
   return (
     <>

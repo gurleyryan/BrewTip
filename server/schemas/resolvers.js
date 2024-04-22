@@ -174,7 +174,7 @@ const resolvers = {
       });
 
       await Owner.findOneAndUpdate(
-        { _id: context.user._id },
+        { _id: ownerId},
         { $addToSet: { coffeehouse: coffeehouse._id } }
       );
 

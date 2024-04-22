@@ -14,6 +14,7 @@ import SingleEvent from './components/SingleEvent';
 import SingleCoffeeHouse from './components/SingleCoffeeHouse'
 import { DateTime } from "./components/Date";
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+import Profile from './components/Profile';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './index.css';
 
@@ -49,10 +50,18 @@ const router = createBrowserRouter([
 
         {
           path: '/Upload',
-          element: <DonationPayment />,
+          element: <Upload />,
         },
 
-
+        {
+          path: '/me/:ownerId',
+          element: <Profile />
+        }, 
+        
+        {
+          path: '/profiles/:profileId',
+          element: <Profile />
+        },
         
         {
           path: '/Signup',

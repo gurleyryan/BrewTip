@@ -6,6 +6,7 @@ export const LOGIN = gql`
       token
       user {
         _id
+        userName
       }
     }
   }
@@ -25,6 +26,7 @@ export const ADD_OWNER = gql`
       token
       user {
         _id
+        userName
       }
     }
   }

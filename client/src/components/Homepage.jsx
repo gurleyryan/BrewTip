@@ -7,9 +7,12 @@ import { useQuery } from '@apollo/client';
 // import ThoughtForm from '../components/ThoughtForm';
 import CoffeeList from './CoffeeList';
 import { QUERY_COFFEEHOUSES } from '../utils/queries';
+import { useState } from 'react';
 
 
-function Homepage() {
+
+
+function Homepage()  {
 
 
 
@@ -17,6 +20,7 @@ function Homepage() {
   const coffeehouses = data?.coffeehouses || [];
   return (
     <main>
+
       <div >
         <div>
           {loading ? (
@@ -26,6 +30,7 @@ function Homepage() {
               coffeehouses={coffeehouses}
               title="Welcome to CoffeeHouses"
             />
+            
           )}
         </div>
       </div>
