@@ -43,6 +43,7 @@ export const QUERY_SINGLE_EVENT_DETAIL = gql`
     eventName
     Date
     eventDetail
+    event_Image
     donations {
         _id
         nameOfdonator

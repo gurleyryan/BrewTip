@@ -24,6 +24,7 @@ type Event
   Date: String
   eventDetail: String
   coffeeEvent: CoffeeHouse
+  event_Image:[String]
   donations: [Donation]!
 }
 

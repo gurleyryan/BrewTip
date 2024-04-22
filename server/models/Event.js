@@ -29,6 +29,13 @@ const eventsSchema = new Schema(
                 ref: 'CoffeeHouse'
             
         },
+        
+        event_Image:
+        [
+            {
+                type: String
+            }
+        ],
         donations:
         [
             {
