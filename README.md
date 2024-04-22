@@ -44,6 +44,7 @@ Contributors: <br />
 - [Jonathan Campos](https://github.com/jmartincampos) <br />
 - [Khoi Phan](https://github.com/khoiphan-9194) <br />
 - [Ryan Gurley](https://github.com/gurleyryan)
+- [Brian Aguilar](https://github.com/bswagy)
 
 ## Credits
 
