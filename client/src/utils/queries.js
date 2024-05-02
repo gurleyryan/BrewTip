@@ -108,9 +108,9 @@ export const QUERY_DONATION = gql`
 
 
 
-export const QUERY_CHECKOUT = gql`
-  query getCheckout($donations: [DonationInput]) {
-    checkout(donations: $donations) {
+export const SUBMIT_DONATION = gql`
+  query donationCheckout($nameOfdonator: String!, $amount: Int!) {
+    donationCheckout(nameOfdonator: $nameOfdonator, amount: $amount) {
       session
     }
   }

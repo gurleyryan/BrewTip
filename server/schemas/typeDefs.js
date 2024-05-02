@@ -42,7 +42,7 @@ input DonationInput
 {
   _id: ID
   nameOfdonator: String
-  donateAmount: Int
+  amount: Int
   message: String
 }
 
@@ -57,8 +57,10 @@ type Checkout {
     user: Owner 
   }
 
+
+
   type Query {
-    checkout(donations:[DonationInput]): Checkout
+    donationCheckout(nameOfdonator:String !, amount: Int!): Checkout! 
 
     owners: [Owner]
     owner(ownerId: ID!): Owner
@@ -70,6 +72,7 @@ type Checkout {
     event(eventId: ID!): Event
     
     donations: [Donation]
+
     donation(donationId: ID!): Donation
 
     me: Owner

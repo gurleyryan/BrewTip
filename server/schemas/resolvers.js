@@ -1,6 +1,7 @@
 const { Event, Donation, Owner, CoffeeHouse } = require('../models');
 const { signToken, AuthenticationError } = require('../utils/auth');
-const stripe = require('stripe')('sk_test_4eC39HqLyjWDarjtT1zdp7dc');
+const stripe = require('stripe')('sk_test_51P8xUcG2NM1wzTlBt75Srj2QRMVklMPKmADpqsSdZNgaNsV3CL5jwIxBl8G8FtAxQOWLunZXbVIUGAXEuKPjk7Au00ElExjxFT');
+const { Stripe } = require("stripe");
 const resolvers = {
   Query: {
   
@@ -87,39 +88,42 @@ const resolvers = {
     // },
 
 
-    checkout: async (parent, args, context) => {
+    donationCheckout: async (_, { nameOfdonator, amount }, context) => {
+      console.log("\nresolvers donation: \n");
       const url = new URL(context.headers.referer).origin;
-      // We map through the list of products sent by the client to extract the _id of each item and create a new Order.
-      await Donation.create({nameOfdonator, donateAmount , message });
-      const line_donations = [];
 
-      for (const donation of args.donations) {
-        line_donations
-        .push({
-          price_data: {
-            currency: 'usd',
-
-            donation_data: {
-              nameOfdonator: donation.nameOfdonator,
-              message: donation.message,
-              donateAmount: donation.donateAmount,
-            },
-        
+      const line_items = [];
+      line_items.push({
+        price_data: {
+          currency: "usd",
+          product_data: {
+            name: `Donator: ${nameOfdonator}`,
           },
-        });
-      }
-
-      const session = await stripe.checkout.sessions.create({
-        payment_method_types: ['card'],
-        line_donations,
-        mode: 'payment',
-        success_url: `${url}/success?session_id={CHECKOUT_SESSION_ID}`,
-        cancel_url: `${url}/`,
+          unit_amount: amount,
+        },
+        quantity: 1,
       });
 
-      return { session: session.id };
-    },
+      try {
+        const session = await stripe.checkout.sessions.create({
+          payment_method_types: ["card"],
+          line_items,
+          mode: "payment",
+          success_url: `${url}/success?session_id={CHECKOUT_SESSION_ID}`,
+          cancel_url: `${url}/`,
+        });
 
+        if (!session) {
+          throw new Error("Something went wrong. Try again later");
+        }
+
+        return { session: session.url };
+        
+      } catch (err) {
+        console.error(err);
+        return err;
+      }
+    },
   },
 
   Mutation: {
