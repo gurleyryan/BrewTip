@@ -25,7 +25,13 @@ const Signup = () => {
 
   const handleFormSubmit = async (event) => {
     event.preventDefault();
-    console.log(formState);
+
+    // check if form has everything (as per react-bootstrap docs)
+    const form = event.currentTarget;
+    if (form.checkValidity() === false) {
+      event.preventDefault();
+      event.stopPropagation();
+    }
 
     try {
       const { data } = await addUser({
@@ -33,9 +39,15 @@ const Signup = () => {
       });
 
       Auth.login(data.addUser.token);
-    } catch (e) {
-      console.error(e);
-    }
+    } catch (err) {
+      console.error(err);
+    };
+
+    setFormState({
+      userName: '',
+      userEmail: '',
+      password: '',
+    });
   };
 
   return (
@@ -60,7 +72,7 @@ const Signup = () => {
       <Form.Group className="mb-3" controlId="formGroupUser">
         <Form.Label>Create Username</Form.Label>
         <Form.Control type="text" placeholder="Enter new username" name="userName"
-            value={formState.name}   onChange={handleChange}/>
+            value={formState.userName}   onChange={handleChange}/>
       </Form.Group>
 
       <Form.Group className="mb-3" controlId="formGroupEmail">
